@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nebulacoin</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta name="theme-color" content="#f19e36" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/images/silver.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body class="boost">
+    
+    <div class="haeder">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="user-balance">
+        <div class="earn-more">
+            <img src="./assets/images/golden.png" width="80px">
+            <h3>Earn more coins</h3>
+        </div>
+        <div class="earn-title">
+            <span class="select-none">Your balance</span>
+        </div>
+        <div class="earn-coins">
+            <img src="./assets/images/coin.png" width="45px">
+            <h1 class="earn-balance"></h1>
+        </div>
+    </div>
+    <div id="task-modal" class="task-modal">
+        <div class="task-modal-content">
+            <span id="task-close" class="task-close">&times;</span>
+            <img id="task-image" src="" alt="Task Image">
+            <h3 id="task-title"></h3>
+            <p id="task-description"></p>
+            <h4 class="task-reward">
+                <img src="./assets/images/coin.png" class="task-modal-img">
+                <span id="task-reward"></span>
+            </h4>
+            <button id="task-action-button" class="task-action-button">Start</button>
+        </div>
+    </div>
+
+    <div class="boosters">
+        <div class="boosters-title">
+            <h2 class="select-none">Our Social Media</h2>
+        </div>
+
+        <div class="boosters-buttons">
+            <div class="boosters-button m-b-1" data-link="https://x.com/thenebulacoin?s=21" data-id="task1">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/X.png" width="50px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Follow X</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">10,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+
+            <div class="boosters-button m-b-1" data-link="https://t.me/thenebulacoin" data-id="task2">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/TELEGRAM.png" width="45px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Telegram</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">10,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+
+            <div class="boosters-button" data-link="https://youtube.com/@thenebulacoin" data-id="task3">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/YOUTUBE.png" width="50px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>YouTube</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">10,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="boosters">
+        <div class="boosters-title">
+            <h2 class="select-none">Invite your friends</h2>
+        </div>
+
+        <div class="boosters-buttons">
+            <div class="boosters-button m-b-1" data-id="task4" data-check="3">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/HOUSE3.png" width="50px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Invite 3 Friends</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">10,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+
+            <div class="boosters-button m-b-1" data-id="task5" data-check="10">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/HOUSE10.png" width="45px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Invite 10 Friends</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">30,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+
+            <div class="boosters-button" data-id="task6" data-check="30">
+
+                <div class="boosters-button-detail">
+                    <div class="boosters-button-image">
+                        <img src="./assets/images/HOUSE30.png" width="50px">
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Invite 30 Friends</h4>
+                        </div>
+                        <div class="boosters-button-data">
+                            <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                            <h5 class="m-r-25">100,000</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="buy-skins">
+        <div class="boosters-title" style="padding: 0 1.25rem;">
+            <h2 class="select-none">Our Social Media</h2>
+        </div>
+
+        <div class="swiper skinSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide">
+                <div class="skin-button m-b-1" data-link="https://x.com/thenebulacoin?s=21" data-id="task1">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/X.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Follow X</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>100,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="skin-button m-b-1" data-link="https://t.me/thenebulacoin" data-id="task2">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/TELEGRAM.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Telegram</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>100,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="skin-button m-b-1" data-link="https://youtube.com/@thenebulacoin" data-id="task3">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/YOUTUBE.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>YouTube</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>100,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="skin-button" data-id="task4">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/HOUSE3.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Invite 3 Friends</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>100,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide slide">
+                <div class="skin-button m-b-1" data-id="task5">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/HOUSE10.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Invite 10 Friends</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>300,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="skin-button" data-id="task6">
+                    <div class="boosters-button-detail">
+                        <div class="boosters-button-image">
+                            <img src="./assets/images/HOUSE30.png" width="50px">
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Invite 30 Friends</h4>
+                            </div>
+                            <div class="boosters-button-data">
+                                <img src="./assets/images/coin.png" width="20px" class="m-r-25">
+                                <h5>1,000,000</h5>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+        var swiper = new Swiper(".skinSwiper", {
+            slidesPerView: 2,
+            spaceBetween: 10
+
+        });
+    </script>
+    <script>
+        // Функция для обновления данных на сервере
+function updateServerData() {
+    const currentCoins = localStorage.getItem('coins');
+    const currentPower = localStorage.getItem('power');
+    const currentTotal = localStorage.getItem('total');
+    const currentCount = localStorage.getItem('count');
+    const secRecharg = localStorage.getItem('sec_recharg');
+    const currentLeague = getCurrentLeague(currentCoins);
+    const currentDate = new Date().toISOString();
+    const formattedDate = formatDateForServer(currentDate);
+    const data = {
+        ID: userId, // Передаем ID пользователя
+        balance: currentCoins,
+        max_energy: currentTotal,
+        energy: currentPower,
+        one_tap: currentCount,
+        sec_recharg: secRecharg,
+        league: currentLeague,
+        last_visit: formattedDate};
+
+    console.log('Отправка данных на сервер:', data);
+
+    fetch('https://nebulacoindatabase.site/update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Ответ сервера:', data);
+    })
+    .catch((error) => {
+        console.error('Ошибка при обновлении базы данных:', error);
+    });
+}
+    document.addEventListener('DOMContentLoaded', () => {
+    const balanceElement = document.querySelector('.earn-coins h1');
+    
+    // Инициализация баланса при загрузке страницы
+    let coins = localStorage.getItem('coins');
+    if (coins === null) {
+        coins = 0; // Начальный баланс
+    } else {
+        coins = parseInt(coins, 10);
+    }
+    balanceElement.innerText = coins.toLocaleString();
+    
+    // Код для обработки выполнения задания и обновления баланса
+    const tasks = document.querySelectorAll('.skin-button, .boosters-button'); // Объединение селекторов
+    const modal = document.getElementById('task-modal');
+    const closeBtn = document.getElementById('task-close');
+    const actionButton = document.getElementById('task-action-button');
+    let currentTask = null;
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    tasks.forEach(task => {
+        task.addEventListener('click', () => {
+            const taskId = task.getAttribute('data-id');
+            if (localStorage.getItem(taskId) !== 'completed') {
+                currentTask = task;
+                const imgSrc = task.querySelector('img').src;
+                const title = task.querySelector('h4') ? task.querySelector('h4').innerText : 'Task';
+                const reward = task.querySelector('h5') ? task.querySelector('h5').innerText : '0';
+    
+                document.getElementById('task-image').src = imgSrc;
+                document.getElementById('task-title').innerText = title;
+                document.getElementById('task-description').innerText = 'Complete the task to earn coins.';
+                document.getElementById('task-reward').innerText = reward;
+    
+                const taskState = localStorage.getItem(taskId);
+                actionButton.innerText = taskState === 'started' ? 'CHECK' : 'START';
+                
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    actionButton.addEventListener('click', () => {
+        const taskId = currentTask.getAttribute('data-id');
+        const taskLink = currentTask.getAttribute('data-link');
+        let referralsRequired = currentTask.getAttribute('data-check');
+        
+        if (taskId === 'task4' || taskId === 'task5' || taskId === 'task6') {
+        if (actionButton.innerText === 'START') {
+            actionButton.innerText = 'CHECK';
+            localStorage.setItem(taskId, 'started');
+        } else if (localStorage.getItem(taskId) !== 'completed') {
+            fetch(`https://nebulacoindatabase.site/check-ref?userId=${userId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.referals_count >= referralsRequired) {
+            const reward = parseInt(document.getElementById('task-reward').innerText.replace(/,/g, ''));
+            coins += reward;
+            localStorage.setItem('coins', coins);
+            updateServerData();
+            balanceElement.innerText = coins.toLocaleString();
+
+            currentTask.querySelector('svg').outerHTML = '<svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10" stroke="#00FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+            modal.style.display = 'none';
+            localStorage.setItem(taskId, 'completed');
+        } else {
+            actionButton.innerText = 'Conditions not met';}
+    })
+    .catch((error) => {
+        console.error('Ошибка при получении данных с сервера:', error);
+    });
+        }
+    } else {
+            if (actionButton.innerText === 'START') {
+                actionButton.innerText = 'CHECK';
+                localStorage.setItem(taskId, 'started');
+                window.location.href = taskLink;
+            } else if (localStorage.getItem(taskId) !== 'completed') {
+                const reward = parseInt(document.getElementById('task-reward').innerText.replace(/,/g, ''));
+                coins += reward;
+                localStorage.setItem('coins', coins);
+                updateServerData();
+                balanceElement.innerText = coins.toLocaleString();
+                
+                currentTask.querySelector('svg').outerHTML = '<svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10" stroke="#00FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                modal.style.display = 'none';
+                localStorage.setItem(taskId, 'completed');}
+        }
+        
+    });
+
+    // Обновляем кнопки "Проверить" при загрузке страницы, если задания уже выполнены
+    tasks.forEach(task => {
+        const taskId = task.getAttribute('data-id');
+        const taskState = localStorage.getItem(taskId);
+        if (taskState === 'completed') {
+            updateServerData();
+            task.querySelector('svg').outerHTML = '<svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10" stroke="#00FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
+    }); });
+    
+    </script>
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

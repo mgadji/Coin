@@ -1,0 +1,15 @@
+для подключения к серверу с бд: ssh root@77.83.175.103
+
+для подключения к бд: mysql -u root -p    или mysql -h 77.83.175.103 -u mgadj -p  (T3st#Passw)
+
+mysql -h 77.83.175.103 -P 3306 -u mgadj -pT3st#Passw -D users
+
+
+  CREATE USER 'mgadj'@'%' IDENTIFIED BY 'T3st#Passw';
+  GRANT ALL PRIVILEGES ON db_name.* TO 'mgadj'@'%';
+
+M2sK67Cn
+
+
+
+sudo nano /etc/nginx/sites-available/default

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nebulacoin - Friends</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta name="theme-color" content="#f19e36" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/images/silver.png">
+</head>
+<body class="frens">
+    
+    <div class="haeder">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="frens-main">
+
+        <div class="frens-count">
+            <span id="friend-count">0 Friends</span>
+        </div>        
+
+        <div class="frens-total-earn">
+            <div class="frens-total-count">
+                <span id="total-earn">+0 </span>
+                <img src="./assets/images/coin.png" width="20px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="frens-help">
+        <div class="frens-help-title">
+            <span>Invite your friends to get bonuses</span>
+        </div>
+
+        <div class="frens-help-box">
+            <div class="frens-help-content">
+                <div class="frens-help-image">
+                    <img src="./assets/images/golden.png" width="50px">
+                </div>
+                <div class="fren-help-text">
+                    <h5>Invite friends</h5>
+                    <div>
+                        <img src="./assets/images/coin.png" width="15px">
+                        <span>50,000</span>
+                        <span>for you and friend</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="frens-open-detail">
+                <a href="#" id="more-bonuses-link">More bonuses</a>
+            </div>
+            
+            <div class="frens-extra-bonuses" id="extra-bonuses" style="display: none;">
+                <div class="bonuses-table">
+                    <div class="bonuses-header">
+                        <span class="header-item">League</span>
+                        <span class="header-item">User</span>
+                        <span class="header-item">Premium</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Bronze" class="icon"> Bronze</span>
+                        <span><img src="./assets/images/coin.png" alt="Bronze" class="icon"> +25,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Bronze" class="icon"> +50,000</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Silver" class="icon"> Silver</span>
+                        <span><img src="./assets/images/coin.png" alt="Silver" class="icon"> +50,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Silver" class="icon"> +100,000</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Gold" class="icon"> Gold</span>
+                        <span><img src="./assets/images/coin.png" alt="Gold" class="icon"> +150,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Gold" class="icon"> +250,000</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Platinum" class="icon"> Platinum</span>
+                        <span><img src="./assets/images/coin.png" alt="Platinum" class="icon"> +250,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Platinum" class="icon"> +500,000</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Diamond" class="icon"> Diamond</span>
+                        <span><img src="./assets/images/coin.png" alt="Diamond" class="icon"> +500,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Diamond" class="icon"> +1,000,000</span>
+                    </div>
+                    <div class="bonuses-row">
+                        <span><img src="./assets/images/3d-trophy.png" alt="Legendary" class="icon"> Legendary</span>
+                        <span><img src="./assets/images/coin.png" alt="Legendary" class="icon"> +1,000,000</span>
+                        <span><img src="./assets/images/coin.png" alt="Legendary" class="icon"> +2,000,000</span>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>-->
+
+
+    <div class="frens-list">
+        <div class="frens-list-title">
+            <span>Friends List</span>
+        </div>
+
+        <div class="frens-list-box" id="frens-list-box">
+            <!-- Friends list will be loaded here dynamically -->
+        </div>        
+    </div>
+
+    <div class="frens-invite">
+        <div class="frens-invite-button" id="invite-button">
+            <span id="invite-button-text">Invite a fren</span>
+        </div>
+    </div>    
+
+    <script src="./assets/js/charge.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let userId = localStorage.getItem('userId');
+            
+            // Функция для загрузки количества друзей
+            function loadFriendCount() {
+                fetch(`https://nebulacoindatabase.site/api/friend-count?userId=${userId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('friend-count').textContent = `${data.count} Friends`;
+                    });
+            }
+    
+            // Функция для загрузки списка друзей
+            function loadFriendsList() {
+                fetch(`https://nebulacoindatabase.site/api/friends-list?userId=${userId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const frensListBox = document.getElementById('frens-list-box');
+                        frensListBox.innerHTML = '';
+                        const rewardPerFriend = 50000; // Количество монет за каждого друга
+                        const totalEarned = data.friends.length * rewardPerFriend; // Общее количество монет
+                        let rewardtext = '50k'
+                        data.friends.forEach(friend => {
+                            frensListBox.innerHTML += `
+                        <div class="frens-data">
+                            <div class="frens-profile">
+                                <div class="frens-profile-data">
+                                    <h4>${friend.username}</h4>
+                                    <div>
+                                        <img src="./assets/images/coin.png" width="15px">
+                                        <span>${friend.balance}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="frens-data-count">
+                                <span>+${rewardtext}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                // Обновляем общее количество монет
+                document.getElementById('total-earn').textContent = `+${totalEarned.toLocaleString()}`;
+            })
+            .catch(error => console.error('Error loading friends list:', error));
+            }
+    
+            // Функция для копирования ссылки приглашения
+            function copyInviteLink() {
+        const inviteLink = `t.me/nebulacoin_bot?start=${userId}`;
+        navigator.clipboard.writeText(inviteLink).then(() => {
+            const inviteButtonText = document.getElementById('invite-button-text');
+            inviteButtonText.textContent = 'Link copied';
+            setTimeout(() => {
+                inviteButtonText.textContent = 'Invite a fren';
+            }, 2000);
+        });
+    }
+    
+            // Загрузка данных при загрузке страницы
+            loadFriendCount();
+            loadFriendsList();
+    
+            // Обработчик для кнопки приглашения
+            document.getElementById('invite-button').addEventListener('click', copyInviteLink);
+        });
+    </script>
+    
+
+    <script>
+        document.getElementById("more-bonuses-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            var extraBonuses = document.getElementById("extra-bonuses");
+            if (extraBonuses.style.display === "none") {
+                extraBonuses.style.display = "block";
+            } else {
+                extraBonuses.style.display = "none";
+            }
+        });
+    </script>
+    
+</body>
+</html>
