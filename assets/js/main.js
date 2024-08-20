@@ -418,4 +418,5 @@ window.addEventListener('beforeunload', () => {
 
 window.addEventListener('unload', () => {
     updateServerData();
+    updateEnergyOnLoad();
 });
