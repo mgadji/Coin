@@ -5,7 +5,7 @@ import mysql from 'mysql2';
 
 const token = '7179110555:AAEE6yVCO-ZhWGz3o1D6NeV1OxM8U45SUdY';
 const adminChatId = '856743757';
-const webAppUrl = `https://mgadji.github.io/CoinMyTGBot`;
+const webAppUrl = `https://mgadji.github.io/Coinqwwiwqwiqokskjksjdsjdsd`;
 const bot = new TelegramBot(token, { polling: true });
 import cors from 'cors';
 const app = express();
@@ -140,7 +140,7 @@ app.get('/redirect', (req, res) => {
   // Определение целевого URL на основе типа устройства
   let targetUrl;
   if (source.isMobile || source.isTablet) {
-    targetUrl = `https://mgadji.github.io/CoinMyTGBot/`;
+    targetUrl = `https://mgadji.github.io/Coinqwwiwqwiqokskjksjdsjdsd/`;
   } else {
     targetUrl = `https://9f5cac20-b607-4abc-bda9-073c9707c3e5.selstorage.ru`;
   }
