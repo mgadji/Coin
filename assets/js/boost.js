@@ -622,19 +622,13 @@ function handlePurchase() {
                         newCostElement.innerText = 'Max';
                     }
                 } else if (id === 'recharge') {
-                    if (currentLevel >= 10) {
-                        levelElement.innerText = '10 lvl';
-                        newCostElement.innerText = 'Max';
-                    } else {
-                        currentCost *= 2;
+                    currentCost *= 2;
                         sec_recharg += 1;
                         levelElement.innerText = `${currentLevel} lvl`;
                         newCostElement.innerText = currentCost.toLocaleString();
                         localStorage.setItem(id + 'Level', currentLevel.toString());
                         localStorage.setItem(id + 'Cost', currentCost.toString());
                         localStorage.setItem('sec_recharg', sec_recharg);
-                        
-                    }
                 }
             }
 
